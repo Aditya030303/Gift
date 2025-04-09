@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Letter 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: black;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .slideshow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+    .slide-wrapper {
+      position: absolute;
+      width: 100%; height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide-wrapper.active {
+      opacity: 1;
+    }
+    .bg-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.3) blur(5px);
+    }
+
+    .container {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      position: relative;
+      z-index: 2;
+    }
+
+    .letter-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      line-height: 1.8;
+      overflow-y: auto;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #ff3e7f;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .typewriter {
+      overflow: hidden;
+      white-space: pre-wrap;
+      border-right: .15em solid #ff3e7f;
+      animation: typing 4s steps(60, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      50% { border-color: transparent; }
+    }
+
+    .timeline {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 30px 0;
+    }
+    .timeline .event {
+      flex: 0 0 auto;
+      background: rgba(255,255,255,0.8);
+      color: #000;
+      border-radius: 12px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .event img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .voice-box {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .fold-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease;
+    }
+
+    .fold-btn:hover {
+      transform: rotateX(90deg) scale(0.8);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slideshow Background -->
+<div class="slideshow">
+  <div class="slide-wrapper active"><img src="images/pic1.jpg" class="bg-img"></div>
+  <div class="slide-wrapper"><img src="images/pic2.jpg" class="bg-img"></div>
+  <div class="slide-wrapper"><img src="images/pic3.jpg" class="bg-img"></div>
+  <div class="slide-wrapper"><img src="images/pic4.jpg" class="bg-img"></div>
+  <div class="slide-wrapper"><img src="images/pic5.jpg" class="bg-img"></div>
+</div>
+
+<div class="container">
+  <div class="letter-box">
+    <div class="typewriter">
+      My Dearest Love,
+
+      As we celebrate our first anniversary, I just want to say—
+      You've filled my world with colors I never knew existed.
+
+      Every smile of yours makes my day brighter, and every moment with you feels like a dream I never want to end.
+
+      Thank you for loving me, understanding me, and standing by my side through everything.
+
+      Here's to us, to our memories, and the many more we'll create together 💖
+    </div>
+
+    <div class="voice-box">
+      <h3>My Voice Note 🎤</h3>
+      <audio controls>
+        <source src="voice-note.mp3" type="audio/mp3">
+      </audio>
+    </div>
+
+    <h3>Our Timeline 📸</h3>
+    <div class="timeline">
+      <div class="event">
+        <img src="images/memory1.jpg">
+        <p>Our First Pic</p>
+          <p>09/2/25</p>
+      </div>
+      <div class="event">
+        <img src="images/memory2.jpg">
+        <p>The Day I ended Friendzone</p>
+          <p>11/2/25</p>
+      </div>
+      <div class="event">
+        <img src="images/memory3.jpg">
+        <p>Your Birthday</p>
+        <p>15/02/25</p>
+      </div>
+      <div class="event">
+        <img src="images/memory4.jpg">
+        <p>Your Farewell Pic</p>
+        <p>25/02/25</p>
+      </div>
+     <div class="event">
+        <img src="images/memory5.jpg">
+        <p>My First Bouquet</p>
+        <p>28/02/25</p>
+      </div>
+        <div class="event">
+        <img src="images/memory6.jpg">
+        <p>My Birthday</p>
+        <p>03/03/25</p>
+      </div>
+    <div class="event">
+        <img src="images/memory7.jpg">
+        <p>My College Fest</p>
+        <p>11/03/25</p>
+      </div>
+        <div class="event">
+        <img src="images/memory8.jpg">
+        <p>The Day we Realised we can not live without each other</p>
+        <p>14/03/25</p>
+      </div>
+        <div class="event">
+        <img src="images/memory9.jpg">
+        <p>AID Gratitude Day</p>
+        <p>16/03/25</p>
+      </div>
+        <div class="event">
+        <img src="images/memory10.jpg">
+        <p>Our First Official Event of my Group</p>
+        <p>06/04/25</p>
+      </div>
+        <div class="event">
+        <img src="images/memory11.jpg">
+        <img src="images/memory12.jpg">
+        <p>Our Best Selfie</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Back</a>
+    <br><br>
+  </div>
+</div>
+
+<!-- Background Music (should be same across pages using sessionStorage) -->
+<audio id="bgMusic" loop>
+  <source src="your-song.mp3" type="audio/mp3">
+</audio>
+
+<script>
+  // Slideshow Logic
+  const slides = document.querySelectorAll('.slide-wrapper');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 4000);
+
+  // Background Music Sync
+  const bgMusic = document.getElementById("bgMusic");
+  const playMusic = () => {
+    if (sessionStorage.getItem('musicTime')) {
+      bgMusic.currentTime = parseFloat(sessionStorage.getItem('musicTime'));
+    }
+    bgMusic.play();
+  }
+  window.addEventListener("click", playMusic, { once: true });
+
+  window.addEventListener("beforeunload", () => {
+    sessionStorage.setItem("musicTime", bgMusic.currentTime);
+  });
+</script>
+</body>
+</html>
