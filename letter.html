@@ -261,14 +261,28 @@
 
   // Background Music Sync
   const bgMusic = document.getElementById("bgMusic");
-  const playMusic = () => {
-    if (sessionStorage.getItem('musicTime')) {
-      bgMusic.currentTime = parseFloat(sessionStorage.getItem('musicTime'));
-    }
-    bgMusic.play();
-  }
-  window.addEventListener("click", playMusic, { once: true });
+  let isPlaying = false;
 
+  const toggleMusic = () => {
+    if (!isPlaying) {
+      // Resume from last saved time
+      const savedTime = sessionStorage.getItem('musicTime');
+      if (savedTime) {
+        bgMusic.currentTime = parseFloat(savedTime);
+      }
+      bgMusic.play().then(() => {
+        isPlaying = true;
+      }).catch(err => console.log("Autoplay blocked"));
+    } else {
+      bgMusic.pause();
+      isPlaying = false;
+    }
+  };
+
+  // Toggle music on each click
+  window.addEventListener("click", toggleMusic);
+
+  // Save current time before leaving
   window.addEventListener("beforeunload", () => {
     sessionStorage.setItem("musicTime", bgMusic.currentTime);
   });
