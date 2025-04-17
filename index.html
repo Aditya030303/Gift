@@ -134,9 +134,19 @@
   }, 4000);
 
   const audio = document.getElementById("bgMusic");
-  window.addEventListener("click", () => {
-    audio.play().catch(err => console.log("Autoplay blocked"));
-  }, { once: true });
+let isPlaying = false;
+
+window.addEventListener("click", () => {
+  if (!isPlaying) {
+    audio.play().then(() => {
+      isPlaying = true;
+    }).catch(err => console.log("Autoplay blocked"));
+  } else {
+    audio.pause();
+    isPlaying = false;
+  }
+});
+
 
   function goToLetter() {
     window.location.href = "letter.html";
